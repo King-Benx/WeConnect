@@ -50,28 +50,31 @@
                 <div class="panel-body">
                     <form action="">
                         <div class="form-group">
-                        <input type="search" class="form-control" name="search" id="search">
+                        <input type="search" class="form-control" name="search" id="search" required="required">
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">Location</span>
-                                <select class="form-control" aria-describedby="basic-addon1">
+                                <span class="input-group-addon" id="location-addon">Location</span>
+                                <select class="form-control" aria-describedby="location-addon">
                                     <option value="">Select Location Of Business</option>
-                                    <option value="">Inland</option>
-                                    <option value="">Overseas</option>
+                                    <option value="inland">Inland</option>
+                                    <option value="overseas">Overseas</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">Business Category</span>
-                                <select class="form-control" aria-describedby="basic-addon1">
+                                <span class="input-group-addon" id="category-addon">Business Category</span>
+                                <select class="form-control" aria-describedby="category-addon">
                                     <option value="">Select Category Of Business</option>
-                                    <option value="">Information Technology</option>
-                                    <option value="">Agriculture</option>
-                                    <option value="">Textiles</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="agriculture">Agriculture</option>
+                                    <option value="textiles">Textiles</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" name="Search" value="Search">
                         </div>
                     </form>
                     <br>
