@@ -51,35 +51,35 @@
                     <form action="" class="form">
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">Business Name</span>
-                                <input type="text" class="form-control" placeholder="Business Name" aria-describedby="basic-addon1">
+                                <span class="input-group-addon" id="business-addon">Business Name</span>
+                                <input type="text" class="form-control" name="name" placeholder="Business Name" aria-describedby="business-addon" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">Location</span>
-                                <select class="form-control" aria-describedby="basic-addon1">
+                                <span class="input-group-addon" id="location-addon">Location</span>
+                                <select class="form-control" name="location" aria-describedby="location-addon" required="required">
                                     <option value="">Select Location Of Business</option>
-                                    <option value="">Inland</option>
-                                    <option value="">Overseas</option>
+                                    <option value="inland">Inland</option>
+                                    <option value="overseas">Overseas</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">Business Category</span>
-                                <select class="form-control" aria-describedby="basic-addon1">
+                                <span class="input-group-addon" id="category-addon">Business Category</span>
+                                <select class="form-control" name="category" aria-describedby="category-addon" required="required">
                                     <option value="">Select Category Of Business</option>
-                                    <option value="">Information Technology</option>
-                                    <option value="">Agriculture</option>
-                                    <option value="">Textiles</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="agriculture">Agriculture</option>
+                                    <option value="textiles">Textiles</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">Description</span>
-                                <textarea class="form-control" placeholder="Describe your Business" aria-describedby="basic-addon1"></textarea>
+                                <span class="input-group-addon" id="description-addon">Description</span>
+                                <textarea class="form-control" placeholder="Describe your Business" aria-describedby="description-addon" required="required"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
