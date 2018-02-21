@@ -46,7 +46,43 @@ class User:
 
 
 class Business:
-    def __init__(self):
+    def __init__(self, user_id, name, location, category, description):
+        self.id = self.generate_business_id()
+        self.user_id = user_id
+        self.name = name
+        self.location = location
+        self.category = category
+        self.description = description
+
+    def generate_business_id(self):
+        global known_business_ids
+        x = random.randint(1, 1000)
+        if x not in known_business_ids:
+            known_business_ids.append(x)
+            return x
+        else:
+            self.generate_business_id()
+
+    def create_business(self):
+        global businesses
+        new_business = dict()
+        data = [
+            self.user_id, self.name, self.location, self.category,
+            self.description
+        ]
+        new_business[self.id] = data
+        businesses.append(new_business)
+
+    @staticmethod
+    def get_business_by_id(business_id):
+        pass
+
+    @staticmethod
+    def get_business_by_user(user_id):
+        pass
+
+    @staticmethod
+    def delete_business(id):
         pass
 
 
