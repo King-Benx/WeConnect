@@ -7,6 +7,12 @@ from flask_script import Shell
 app = create_app(os.getenv('APPLICATION_CONFIG') or 'default')
 manager = Manager(app)
 
+@manager.command
+def run_test():
+    """Run the unit tests."""
+    import unittest
+    tests = unittest.TestLoader().discover('tests')
+    unittest.TextTestRunner(verbosity=2).run(tests)
 
 def make_shell_context():
     return dict(app=app, User=User, Business=Business, Review=Review)
