@@ -45,6 +45,7 @@ class User:
                 return user[user_id]
 
 
+
 class Business:
     def __init__(self, user_id, name, location, category, description):
         self.id = self.generate_business_id()
@@ -85,6 +86,15 @@ class Business:
     def delete_business(id):
         pass
 
+    def covert_to_json(self):
+        information ={
+            'id'  : self.id,
+            'name' : self.name,
+            'category': self.category,
+            'location': self.location,
+            'description':self.description
+        }
+        return information
 
 class Review:
     def __init__(self, user_id, business_id, review):
@@ -116,3 +126,18 @@ class Review:
     @staticmethod
     def get_review_by_business(business_id):
         pass
+
+    def convert_to_json(self):
+        information ={
+            'id': self.id,
+            'user_id': self.user_id,
+            'business_id': self.business_id,
+            'review': self.review
+        }
+
+
+
+
+
+
+
