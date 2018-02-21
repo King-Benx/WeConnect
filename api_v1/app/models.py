@@ -87,5 +87,32 @@ class Business:
 
 
 class Review:
-    def __init__(self):
+    def __init__(self, user_id, business_id, review):
+        self.id = self.generate_review_id()
+        self.user_id = user_id
+        self.business_id = business_id
+        self.review = review
+
+    def create_review(self):
+        global reviews
+        new_review = dict()
+        data = [self.user_id, self.business_id, self.review]
+        new_review[self.id] = data
+        reviews.append(new_review)
+
+    def generate_review_id(self):
+        global known_review_ids
+        x = random.randint(1, 1000)
+        if x not in known_review_ids:
+            known_review_ids.append(x)
+            return x
+        else:
+            self.generate_review_id()
+
+    @staticmethod
+    def get_review_by_id(id):
+        pass
+
+    @staticmethod
+    def get_review_by_business(business_id):
         pass
