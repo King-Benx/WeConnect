@@ -1,10 +1,12 @@
 from flask import jsonify
 
+
 def unauthorized(message):
     # helper function to handle errors when authentication information is missing
     response = jsonify({'error': 'unauthorized', 'message': message})
     response.status_code = 401
     return response
+
 
 def created_resource(message):
     # helper functions when resources have been created and there is need for a custom message

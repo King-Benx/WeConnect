@@ -1,4 +1,5 @@
 import random
+from flask import session
 from . import users, known_user_ids, known_emails, businesses, known_business_ids, reviews, known_review_ids
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -55,6 +56,8 @@ class User:
         for known_email in known_emails:
             if known_email['email'] == email:
                 user_id = known_email['id']
+                session['id'] = user_id
+                session['status'] = 'active'
                 if check_password_hash(User.get_user(user_id)[1], password):
                     return True
                 else:
@@ -66,6 +69,15 @@ class User:
             if known_email['email'] == email:
                 user_id = known_email['id']
                 return User.get_user(user_id)
+
+    @staticmethod
+    def convert_from_json(json_object):
+        username = json_object.get('username')
+        email = json_object.get('email')
+        password = json_object.get('password')
+        user = User(username, email, password)
+        if user:
+            return True
 
 
 class Business:
