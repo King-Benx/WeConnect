@@ -28,7 +28,7 @@ def register_new_user():
         })
 
 
-@api.route('/api/vi/auth/logout', methods=['POST'])
+@api.route('/api/v1/auth/logout', methods=['POST'])
 def logout_user():
     # This logs out user from the application
     sign_out = User.logout()
@@ -40,10 +40,19 @@ def logout_user():
         return jsonify({
             'message':
             'Something went wrong, please try again ' +
-            str(url_for('api.logout_user',_external=True))
+            str(url_for('api.logout_user', _external=True))
         })
 
-@api.route('/api/vi/auth/reset-password ', methods=['POST'])
+
+@api.route('/api/v1/auth/reset-password', methods=['POST'])
 def reset_password():
     # This logs out user from the application
-    pass
+    if session.get('id') == "" and session.get('status') == 'inactive':
+        pass
+    else:
+        return jsonify({
+            'message':
+            'Password reset to "pass" use "pass" to Login' +
+            ' you can login using ' +
+            str(url_for('api.login', _external=True))
+        })
