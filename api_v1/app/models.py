@@ -58,6 +58,7 @@ class Business:
         self.location = location
         self.category = category
         self.description = description
+        self.create_business()
 
     def generate_business_id(self):
         # generate a business id
