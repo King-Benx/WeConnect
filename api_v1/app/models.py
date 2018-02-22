@@ -12,6 +12,7 @@ class User:
         self.create_user()
 
     def create_user(self):
+        # creates a new user
         global users
         global known_emails
         new_user = dict()
@@ -24,6 +25,7 @@ class User:
             known_emails.append(self.email)
 
     def generate_user_id(self):
+        # generate a unique user id for a new user
         global known_user_ids
         x = random.randint(1, 1000)
         if x not in known_user_ids:
@@ -33,17 +35,19 @@ class User:
             self.generate_user_id()
 
     def generate_password(self, password):
+        # generate a hashed password
         return generate_password_hash(password)
 
     def verify_password(self, password):
+        # verify that passwords at login will match
         return check_password_hash(self.password_hash, password)
 
     @staticmethod
     def get_user(user_id):
+        # get a user by id
         for user in users:
             if user_id in user.keys():
                 return user[user_id]
-
 
 
 class Business:
@@ -87,14 +91,15 @@ class Business:
         pass
 
     def covert_to_json(self):
-        information ={
-            'id'  : self.id,
-            'name' : self.name,
+        information = {
+            'id': self.id,
+            'name': self.name,
             'category': self.category,
             'location': self.location,
-            'description':self.description
+            'description': self.description
         }
         return information
+
 
 class Review:
     def __init__(self, user_id, business_id, review):
@@ -128,16 +133,9 @@ class Review:
         pass
 
     def convert_to_json(self):
-        information ={
+        information = {
             'id': self.id,
             'user_id': self.user_id,
             'business_id': self.business_id,
             'review': self.review
         }
-
-
-
-
-
-
-
