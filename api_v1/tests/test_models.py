@@ -1,7 +1,7 @@
 import unittest
 from werkzeug.security import check_password_hash
 from app.models import User,Business,Review
-
+from app import users
 class ModelTestCase(unittest.TestCase):
     
     def test_generate_password(self):
@@ -31,4 +31,9 @@ class ModelTestCase(unittest.TestCase):
         user = User('derrick','derrick@mail.com','password')
         user2 = User('susan','susan@mail.com','password')
         self.assertNotEqual(user2.email, user.email)
+
+    def test_user_created(self):
+        user = User('derrick','derrick@mail.com','password')
+        self.assertNotEqual(len(users), 0)
+
 
