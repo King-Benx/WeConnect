@@ -60,6 +60,13 @@ class User:
                 else:
                     return False
 
+    @staticmethod
+    def get_user_by_email(email):
+        for known_email in known_emails:
+            if known_email['email'] == email:
+                user_id = known_email['id']
+                return User.get_user(user_id)
+
 
 class Business:
     def __init__(self, user_id, name, location, category, description):
