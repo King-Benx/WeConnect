@@ -2,8 +2,8 @@ from flask import Flask
 from config import config
 
 # variables to store data in memory
-users = []
-known_user_ids = []
+users = list()
+known_user_ids = list()
 reviews = []
 known_review_ids = []
 businesses = []
