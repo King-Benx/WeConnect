@@ -21,7 +21,7 @@ class User:
             data = [self.username, self.password_hash, self.email]
             new_user[generated_id] = data
             users.append(new_user)
-            known_emails.append(self.email)
+            known_emails.append({'email': self.email, 'id': self.id})
 
     def generate_user_id(self):
         # generate a unique user id for a new user
