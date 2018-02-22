@@ -21,5 +21,5 @@ def create_app(config_name):
     app.register_blueprint(main_blueprint)
     # create blueprint of the api
     from .api_v_1 import api as api_blueprint
-    app.register_blueprint(api_blueprint)
+    app.register_blueprint(api_blueprint, url_ref='/api/v1/')
     return app
