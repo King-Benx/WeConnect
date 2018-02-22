@@ -64,6 +64,12 @@ class User:
                     return False
 
     @staticmethod
+    def logout():
+        session['id'] = ''
+        session['status'] = 'inactive'
+        return True
+
+    @staticmethod
     def get_user_by_email(email):
         for known_email in known_emails:
             if known_email['email'] == email:

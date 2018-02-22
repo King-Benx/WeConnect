@@ -20,12 +20,12 @@ def verify_password(email, password):
 
 @api.route('/api/v1/auth/login', methods=['POST'])
 def login():
+    # This logs user into system
     data = request.get_json()
     email = data['email']
     password = data['password']
     status = User.login(email, password)
     if status == True:
-        session['status'] = 'active'
         return jsonify({'message': 'successfully logged in'})
     else:
         return jsonify({

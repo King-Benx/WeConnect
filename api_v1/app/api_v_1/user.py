@@ -1,4 +1,4 @@
-from flask import request, jsonify, url_for
+from flask import request, jsonify, url_for, session
 from . import api
 from .authentication import auth
 from ..models import User
@@ -26,3 +26,24 @@ def register_new_user():
         return jsonify({
             'message': 'Couldn\'t create user, some fields missing'
         })
+
+
+@api.route('/api/vi/auth/logout', methods=['POST'])
+def logout_user():
+    # This logs out user from the application
+    sign_out = User.logout()
+    if sign_out == True:
+        print(session.get('id'))
+        print(session.get('status'))
+        return jsonify({'message': 'You have been successfully logout'})
+    else:
+        return jsonify({
+            'message':
+            'Something went wrong, please try again ' +
+            str(url_for('api.logout_user',_external=True))
+        })
+
+@api.route('/api/vi/auth/reset-password ', methods=['POST'])
+def reset_password():
+    # This logs out user from the application
+    pass
