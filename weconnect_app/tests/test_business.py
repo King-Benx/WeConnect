@@ -4,6 +4,12 @@ from app import businesses
 
 
 class BusinessTestCase(unittest.TestCase):
+    def test_class_instance(self):
+        # Tests that an object is an instance of a class
+        business = Business(1, 'test business', 'inland', 'technology',
+                            'business description')
+        self.assertIsInstance(business, Business)
+
     def test_generate_business_id(self):
         # Tests that a unique id is created
         business1 = Business(1, 'test business', 'inland', 'technology',

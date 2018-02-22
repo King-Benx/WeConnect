@@ -18,7 +18,7 @@ businesses they have interacted with.
 * Bootstrap 3 - The Web framework used
 * Jquery - JavaScript Library used
 * Flask - Python Framework used
-## RUNNING THE APPLICATION
+## RUNNING THE APPLICATION PROGRAMMING INTERFACE (API v1)
 1. A file that contains all necessary extensions exists within the app, to get all dependencies run the following command
 > **pip3 install -r requirements.txt**
 2. Configurations are handled by the **config.py** file and any environmental variables should occur in this file.

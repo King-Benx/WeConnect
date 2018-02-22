@@ -5,6 +5,11 @@ from app import users
 
 
 class UserTestCase(unittest.TestCase):
+    def test_class_instance(self):
+        # Tests whether an object is an instance of the class
+        user = User('derrick', 'derrick@mail.com', 'password')
+        self.assertIsInstance(user, User)
+
     def test_generate_password(self):
         # Tests that a password hash is unique and that its not the same as the previous value
         user = User('derrick', 'derrick@mail.com', 'password')
