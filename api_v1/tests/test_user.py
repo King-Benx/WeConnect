@@ -39,4 +39,3 @@ class UserTestCase(unittest.TestCase):
         # Tests that a user has been created
         user = User('derrick', 'derrick@mail.com', 'password')
         self.assertNotEqual(len(users), 0)
-

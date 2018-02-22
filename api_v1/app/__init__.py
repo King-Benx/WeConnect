@@ -4,7 +4,7 @@ from config import config
 # variables to store data in memory
 users = list()
 known_user_ids = list()
-reviews = ()
+reviews = list()
 known_review_ids = list()
 businesses = list()
 known_business_ids = list()

@@ -111,8 +111,10 @@ class Review:
         self.user_id = user_id
         self.business_id = business_id
         self.review = review
+        self.create_review()
 
     def create_review(self):
+        # create review
         global reviews
         new_review = dict()
         data = [self.user_id, self.business_id, self.review]
@@ -120,6 +122,7 @@ class Review:
         reviews.append(new_review)
 
     def generate_review_id(self):
+        # generate a unique id for a review
         global known_review_ids
         x = random.randint(1, 1000)
         if x not in known_review_ids:
@@ -143,3 +146,4 @@ class Review:
             'business_id': self.business_id,
             'review': self.review
         }
+        return information
