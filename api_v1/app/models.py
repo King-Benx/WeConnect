@@ -15,12 +15,11 @@ class User:
         # creates a new user
         global users
         global known_emails
-        new_user = dict()
-        if self.email in known_emails:
-            return 'Email exists'
-        else:
+        generated_id = self.id
+        if self.email not in known_emails:
+            new_user = dict()
             data = [self.username, self.password_hash, self.email]
-            new_user[self.id] = data
+            new_user[generated_id] = data
             users.append(new_user)
             known_emails.append(self.email)
 
@@ -34,7 +33,8 @@ class User:
         else:
             self.generate_user_id()
 
-    def generate_password(self, password):
+    @staticmethod
+    def generate_password(password):
         # generate a hashed password
         return generate_password_hash(password)
 
@@ -48,6 +48,17 @@ class User:
         for user in users:
             if user_id in user.keys():
                 return user[user_id]
+
+    @staticmethod
+    def login(email, password):
+        # authenticate user
+        for known_email in known_emails:
+            if known_email['email'] == email:
+                user_id = known_email['id']
+                if check_password_hash(User.get_user(user_id)[1], password):
+                    return True
+                else:
+                    return False
 
 
 class Business:
