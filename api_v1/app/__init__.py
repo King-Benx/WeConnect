@@ -4,11 +4,11 @@ from config import config
 # variables to store data in memory
 users = list()
 known_user_ids = list()
-reviews = []
-known_review_ids = []
-businesses = []
-known_business_ids = []
-known_emails = []
+reviews = ()
+known_review_ids = list()
+businesses = list()
+known_business_ids = list()
+known_emails = list()
 
 
 def create_app(config_name):

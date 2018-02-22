@@ -60,6 +60,7 @@ class Business:
         self.description = description
 
     def generate_business_id(self):
+        # generate a business id
         global known_business_ids
         x = random.randint(1, 1000)
         if x not in known_business_ids:
@@ -69,6 +70,7 @@ class Business:
             self.generate_business_id()
 
     def create_business(self):
+        # create a business
         global businesses
         new_business = dict()
         data = [
@@ -91,6 +93,7 @@ class Business:
         pass
 
     def covert_to_json(self):
+        # serializable dictionary that defines business layout
         information = {
             'id': self.id,
             'name': self.name,
