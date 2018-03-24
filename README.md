@@ -17,16 +17,5 @@ businesses they have interacted with.
 ## BUILT WITH
 * Bootstrap 3 - The Web framework used
 * Jquery - JavaScript Library used
-* Flask - Python Framework used
-## RUNNING THE APPLICATION PROGRAMMING INTERFACE (API v1)
-1. A file that contains all necessary extensions exists within the app, to get all dependencies run the following command
-> **pip3 install -r requirements.txt**
-2. Configurations are handled by the **config.py** file and any environmental variables should occur in this file.
-3. To launch the application run the following command in your terminal
-> **python manage.py runserver**
-4. To launch the shell run the following command in your terminal
-> **python manage.py shell**
-5. To run tests on the application, run the following command in your terminal
-> **python manage.py run_test**
 ## Author
 Asiimwe Benard
